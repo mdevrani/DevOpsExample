@@ -28,6 +28,7 @@ resource "docker_container" "mysql" {
     "MYSQL_DATABASE=testDb",
     "MYSQL_PASSWORD=root",
   ]
+  command = ["--bind-address=0.0.0.0"]
 }
 
 resource "docker_image" "spring_app" {
