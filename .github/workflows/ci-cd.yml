@@ -24,7 +24,7 @@ jobs:
           distribution: temurin
 
       - name: Cache Gradle dependencies
-        uses: action/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*','**/gradle-wrapper.properties')}}
