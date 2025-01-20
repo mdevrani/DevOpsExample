@@ -1,0 +1,32 @@
+---
+- name: Install MySQL
+  apt:
+    name: mysql-server
+    state: present
+  become: yes
+
+- name: Start MySQL service
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+  become: yes
+
+#- name: Secure MySQL installation
+#  command: >
+#    mysql_secure_installation --use-default
+#  ignore_errors: yes
+#
+#- name: Set up MySQL root user password
+#  mysql_user:
+#    name: root
+#    password: "{{mysql_root_password}}"
+#    host: localhost
+#    state: present
+#  become: yes
+#
+#- name: Create a test database
+#  mysql_db:
+#    name: "{{ mysql_test-db }}"
+#    state: present
+#  become: yes

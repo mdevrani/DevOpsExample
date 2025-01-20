@@ -1,0 +1,7 @@
+---
+- name: Execute the primary playbook
+  hosts: localhost
+  become: true
+  gather_facts: true
+
+- import_playbook: dependencies.yml

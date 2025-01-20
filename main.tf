@@ -54,6 +54,7 @@ resource "docker_container" "spring_app" {
     "SPRING_DATASOURCE_USERNAME=root",
     "SPRING_DATASOURCE_PASSWORD=root",
     "SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.MySQLDialect",
-    "SPRING_JPA_HIBERNATE_DDL_AUTO=update"
+    "SPRING_JPA_HIBERNATE_DDL_AUTO=update",
+    "SPRING_DATASOURCE_DRIVER_CLASS_NAME=com.mysql.cj.jdbc.Driver"
   ]
 }

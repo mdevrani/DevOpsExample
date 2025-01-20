@@ -1,0 +1,19 @@
+---
+- name: Install Java
+  apt:
+    name: "{{ java_package }}"
+    state: present
+  register: java_install
+  become: yes
+
+- name: Set JAVA_HOME environment variable
+  lineinfile:
+    path: /etc/environment
+    regexp: '^JAVA_HOME='
+    line: "JAVA_HOME={{ java_home }}"
+    state: present
+  when: java_install is succeeded
+
+- name: Notify Java Installation
+  debug:
+    msg: "Java Installed successfully"

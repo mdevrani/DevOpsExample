@@ -1,0 +1,7 @@
+---
+- name: Setup dependencies
+  hosts: localhost
+  become: true
+  roles:
+    - java
+    - mysql

@@ -1,0 +1,8 @@
+---
+- name: Restart Java-dependent services
+  service:
+    name: "{{ item }}"
+    state: restarted
+  with_items:
+    - tomcat
+    - other-service-if-needed
